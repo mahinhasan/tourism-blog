@@ -18,7 +18,7 @@ class PostLIst(ListView):
     form_class = RapistForm
     template_name = 'myapp/index.html'
     ordering = ['-id']
-    paginate_by = 2
+    paginate_by = 4
 
 
 class AddRppist(CreateView):

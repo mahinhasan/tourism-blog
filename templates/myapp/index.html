@@ -117,7 +117,7 @@
 			<div class="card-columns listfeaturedtag">
 		<!-- begin post -->
 				
-		{% for post in object_list %}	
+		{% for post in object_list|slice:":2" %}	
 				<div class="card shadow-lg bg-dark rounded" style="width: 40rem;">
 					
 					<div class="row">
