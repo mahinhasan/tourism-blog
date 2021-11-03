@@ -55,6 +55,9 @@
 			<li class="nav-item">
 				<a class="nav-link" href="{% url 'login' %}">login</a>
 			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{% url 'register' %}">Register</a>
+			</li>
 			{% endif%}
 		</ul>
 		<!-- End Menu -->
@@ -94,17 +97,18 @@
 		<div class="col-md-3 list-group">
 			<div>
 				<ul class="list-unstyled">
-					<li class="list-group-item"><a class="site-nav-name" href="#"> Mahin</a></li>
-					<li class="list-group-item"><a class="site-nav-name" href="#"> Lemon</a></li>
-					<li class="list-group-item"><a class="site-nav-name" href="#"> Nahid</a></li>
-					<li class="list-group-item"><a class="site-nav-name" href="#"> Hazra</a></li>
-					<li class="list-group-item"><a class="site-nav-name" href="#"> Mim</a></li>
-					<li class="list-group-item"><a class="site-nav-name" href="#"> Dip</a></li>
-					<li class="list-group-item"><a class="site-nav-name" href="#"> Asiq</a></li>
-					<li class="list-group-item"><a class="site-nav-name" href="#"> Hasan</a></li>
-					<li class="list-group-item"><a class="site-nav-name" href="#"> Tamim</a></li>
-					<li class="list-group-item"><a class="site-nav-name" href="#"> Bijoy</a></li>
-					<li class="list-group-item"><a class="site-nav-name" href="#"> Mony</a></li>
+					<li class="list-group-item bg-info"><a class="site-nav-name text-uppercase font-weight-bold" href="#">New user</a></li>
+
+					<li class="list-group-item"><a class="site-nav-name" href="#">Smb Lemon</a></li>
+					<li class="list-group-item"><a class="site-nav-name" href="#">Mehedi Hasan Mahin</a></li>
+					<li class="list-group-item"><a class="site-nav-name" href="#"> Nahid Hasan Mony</a></li>
+					<li class="list-group-item"><a class="site-nav-name" href="#">Loman Hazra Nahid</a></li>
+					<li class="list-group-item"><a class="site-nav-name" href="#">Alif Refat Mim</a></li>
+					<li class="list-group-item"><a class="site-nav-name" href="#">Sanjid Shahad Dip</a></li>
+					<li class="list-group-item"><a class="site-nav-name" href="#"> Asiqur Rahman Khan</a></li>
+					<li class="list-group-item"><a class="site-nav-name" href="#">Md Khurshed Hasan</a></li>
+					<li class="list-group-item"><a class="site-nav-name" href="#"> Tamim Iqbal</a></li>
+					<li class="list-group-item"><a class="site-nav-name" href="#">Yeasir Arafat Bijoy</a></li>
 
 				</ul>
 			</div>
@@ -173,7 +177,7 @@
 				<img class="img-fluid" src="{{post.image.url}}" alt="">
 			</a>
 			<div class="card-block">
-				<h2 class="card-title"><a href="post.html">{{ post.title }}</a></h2>
+				<h2 class="card-title"><a href="{% url 'rapist-detail' post.pk %}">{{ post.title }}</a></h2>
 				<h4 class="card-text">{{ post.details   | truncatewords:18 | safe}}</h4>
 				<div class="metafooter">
 					<div class="wrapfooter">

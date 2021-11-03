@@ -1,12 +1,156 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="icon" href="{% static 'myapp/images/favicon.ico' %}">
+<title>Tourism-welcom to visit tourism.com</title>
+<!-- Bootstrap core CSS -->
+<link href="{% static 'myapp/css/bootstrap.min.css' %}" rel="stylesheet">
+<!-- Fonts -->	
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+<!-- Custom styles for this template -->
+<link rel="stylesheet" href="{% static 'myapp/css/login.css' %}">
+<link href="{% static 'myapp/css/mediumish.css' %}" rel="stylesheet">
+</head>
+<body>
 
+<!-- Begin Nav
+================================================== -->
+<nav class="navbar navbar-toggleable-md navbar-light bg-white fixed-top mediumnavigation">
+<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="container w-75 mx-auto">
+	<!-- Begin Logo -->
+	<a class="navbar-brand" style="font-family: Georgia, 'Times New Roman', Times, serif;font-weight: bolder;font-size: 30px;" href="{% url 'home' %}">
+	
+		<!-- <img src="{% static 'myapp/images/logo.png' %}" alt="logo"> -->
+	<span style="color:darkcyan;font-size: 35px;font-style: italic;" > T</span>-Tourism Blog
+	</a>
+	<!-- End Logo -->
+	<div class="collapse navbar-collapse" id="navbarsExampleDefault">
+		<!-- Begin Menu -->
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+			<a class="nav-link" href="index.html">Stories <span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="post.html">Post</a>
+			</li>
+			
+			{% if user.is_authenticated%}
+			<li class="nav-item">
+				<a class="nav-link" href="#">{{user.username}}</a>
+				</li>
+			<li class="nav-item">
+				<a class="nav-link" href="{% url 'logout' %}">logout</a>
+			</li>
 
-<div class="container">
-<h1>Login</h1>
-
-<form action="" method="POST">
-    {% csrf_token %}
-
-    {{form.as_p}}
-    <button type="submit">login</button>
-</form>
+			{% else %}
+			<li class="nav-item">
+				<a class="nav-link" href="{% url 'login' %}">login</a>
+			</li>
+			{% endif%}
+		</ul>
+		<!-- End Menu -->
+		<!-- Begin Search -->
+		<form class="form-inline my-2 my-lg-0">
+			<input class="form-control mr-sm-2" type="text" placeholder="Search">
+			<span class="search-icon"><svg class="svgIcon-use" width="25" height="25" viewbox="0 0 25 25"><path d="M20.067 18.933l-4.157-4.157a6 6 0 1 0-.884.884l4.157 4.157a.624.624 0 1 0 .884-.884zM6.5 11c0-2.62 2.13-4.75 4.75-4.75S16 8.38 16 11s-2.13 4.75-4.75 4.75S6.5 13.62 6.5 11z"></path></svg></span>
+		</form>
+		<!-- End Search -->
+	</div>
 </div>
+</nav>
+<!-- End Nav
+================================================== -->
+<!-- 
+<div class="container">
+    <h1>Login</h1>
+    
+    <form action="" method="POST">
+        {% csrf_token %}
+    
+        {{form.as_p}}
+        <button type="submit">login</button>
+    </form>
+    </div> -->
+
+    <!-- <div class="container login-container w-75 mx-auto ">
+        <div class="row">
+           
+            <div class="wcol-md-6 login-form-2" >
+                <h3>Login User</h3>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{form.username}}
+                    </div>
+                    <div class="form-group">
+                        {{form.password}}
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btnSubmit" value="Login" />
+                    </div>
+                    <div class="form-group">
+                        <a href="#" class="ForgetPwd">Forget Password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div> -->
+
+
+
+    <div class="container login-container">
+        <div class="row">
+            
+            <div class="col-md-6 login-form-1">
+                <h3>Login Form</h3>
+                <form method="post">
+                    {% csrf_token%}
+                    <div class="form-group">
+                        {{form.username}}
+                    </div>
+                    <div class="form-group">
+                        {{form.password}}
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btnSubmit" value="Login" />
+                    </div>
+                    <div class="form-group">
+
+                        <a href="#" class="ForgetPwd" value="Login">Forget Password?</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+<script src="{% static 'myapp/js/jquery.min.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="{% static 'myapp/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'myapp/js/ie10-viewport-bug-workaround.js' %}"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
