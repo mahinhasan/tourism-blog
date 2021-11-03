@@ -1,4 +1,11 @@
-.navbar{
+/* .navbar{
     width: 60%;
     background-color: red;
+} */
+
+.site-nav-name {
+    font-size: 17px;
+    font-weight: normal;
+    color: rgb(72, 66, 66);
+
 }
