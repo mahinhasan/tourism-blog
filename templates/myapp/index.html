@@ -139,7 +139,7 @@
 										</span>
 										<span class="author-meta">
 											{% if user.is_authenticated %}
-										<span class="post-name"><a href="author.html">{{user.username}}</a></span><br/>
+										<span class="post-name"><a href="author.html">{{user.username | title}}</a></span><br/>
 										{% endif %}
 										<span class="post-date">22 July 2017</span><span class="dot"></span><span class="post-read">6 min read</span>
 										</span>
