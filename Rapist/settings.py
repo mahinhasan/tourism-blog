@@ -48,8 +48,8 @@ INSTALLED_APPS = [
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': 'full',
-        'height': 300,
-        'width': 300,
+        'height': 400,
+        'width': 'auto',
     },
 }
 MIDDLEWARE = [

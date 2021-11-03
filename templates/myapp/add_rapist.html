@@ -1,13 +1,33 @@
 
+{% load static %} {% load crispy_forms_tags %}
 
-<h1>Add New Rapist</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" href="{% static 'myapp/images/favicon.ico' %}" />
+    <title>Tourism-welcom to visit tourism.com</title>
+    <!-- Bootstrap core CSS -->
+    <link href="{% static 'myapp/css/bootstrap.min.css' %}" rel="stylesheet" />
+  
+    <title>Document</title>
+</head>
+<body>
+<div class="container" style="padding: 7%;">
+    <h1>Add New Rapist</h1>
 {% if user.is_authenticated %}
 <form action="" method="POST" enctype="multipart/form-data" >
     {% csrf_token%}
     {{ form.media }}
-    {{form.as_p}}
+    {{form | crispy}}
     <button class="btn btn-primary" typ e="submit">Add</button>
 
 </form>
 {% endif %}
+
+</div>    
+</body>
+</html>
 
