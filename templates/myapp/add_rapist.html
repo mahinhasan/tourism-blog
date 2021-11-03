@@ -1,0 +1,20 @@
+{% extends 'myapp/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<h1>Add New Rapist</h1>
+{% if user.is_authenticated %}
+<form action="" method="POST" enctype="multipart/form-data" >
+    {% csrf_token%}
+    {{ form.media }}
+    {{form.as_p}}
+    <button class="btn btn-primary" typ e="submit">Add</button>
+
+</form>
+{% endif %}
+
+
+
+
+{% endblock%}
