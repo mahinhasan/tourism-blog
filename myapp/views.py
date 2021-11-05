@@ -23,7 +23,10 @@ class PostLIst(ListView):
     
     template_name = 'myapp/index.html'
     ordering = ['-id']
-    paginate_by = 4
+    allusers= get_user_model().objects.all()
+
+
+        
 
    
 
@@ -68,13 +71,12 @@ def index(request):
     context = {'visitor':num_visits,'users':users}
     return render(request,'myapp/index.html',context=context)
 
-from django.shortcuts import render
-from django.contrib.auth import get_user_model
+
 
 def showthis(request):
 
-    all_users= get_user_model().objects.all()
-    object_lists = Tourism.objects.all()
+    all_users= get_user_model().objects.all().order_by('-id')[0:20]
+    object_lists = Tourism.objects.all().order_by('-id')
     
     context= {'allusers': all_users,'object_list':object_lists}
         
@@ -93,6 +95,10 @@ def search(request):
         context = {'resutl':result}
         return render(request,'myapp/search.html',context)
 
+
+def author(request):
+    
+    return render(request,'myapp/author.html')
 
 
 

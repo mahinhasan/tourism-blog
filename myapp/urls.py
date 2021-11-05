@@ -14,7 +14,8 @@ urlpatterns = [
     path('visitor',views.index,name='visitor'),
     path('users',views.showthis,name='users'),
     path('blogs',views.allBlog,name='blogs'),
-    path('search',views.search,name='search')
+    path('search',views.search,name='search'),
+    path('author',views.author,name='author')
 
 
 
